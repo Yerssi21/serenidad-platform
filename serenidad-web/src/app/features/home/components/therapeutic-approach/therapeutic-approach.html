@@ -1,0 +1,60 @@
+<section
+  id="enfoque"
+  class="approach"
+>
+  <div class="container">
+
+    <div class="approach__intro">
+
+      <div class="approach__heading">
+        <span class="approach__eyebrow">
+          Mi enfoque terapéutico
+        </span>
+
+        <h2>
+          Comprender para poder
+          <em>transformar.</em>
+        </h2>
+      </div>
+
+      <div class="approach__description">
+        <p>
+          Mi forma de trabajar va más allá de aliviar los síntomas.
+          Buscaremos comprender el origen de aquello que estás viviendo
+          para construir cambios reales y duraderos.
+        </p>
+
+        <p>
+          Integro herramientas basadas en la evidencia científica con
+          una mirada cercana, humana y respetuosa con tu proceso.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="approach__grid">
+
+      @for (approach of approaches; track approach.number) {
+        <article class="approach-card">
+
+          <span class="approach-card__number">
+            {{ approach.number }}
+          </span>
+
+          <div class="approach-card__line"></div>
+
+          <h3>
+            {{ approach.title }}
+          </h3>
+
+          <p>
+            {{ approach.description }}
+          </p>
+
+        </article>
+      }
+
+    </div>
+
+  </div>
+</section>
