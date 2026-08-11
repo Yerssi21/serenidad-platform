@@ -1,0 +1,83 @@
+<section
+  id="blog"
+  class="blog-preview"
+>
+  <div class="container">
+
+    <header class="blog-preview__header">
+
+      <div>
+        <span class="blog-preview__eyebrow">
+          Recursos para ti
+        </span>
+
+        <h2>
+          Reflexiones para
+          <em>comprenderte mejor.</em>
+        </h2>
+      </div>
+
+      <div class="blog-preview__intro">
+        <p>
+          Un espacio con recursos, reflexiones y herramientas sobre
+          bienestar emocional, relaciones y crecimiento personal.
+        </p>
+
+        <a routerLink="/blog">
+          Ir al blog
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </header>
+
+    <div class="blog-preview__grid">
+
+      @for (article of articles; track article.slug) {
+
+        <article class="article-card">
+
+          <div class="article-card__image">
+            <span>
+              Imagen del artículo
+            </span>
+          </div>
+
+          <div class="article-card__content">
+
+            <div class="article-card__meta">
+              <span>
+                {{ article.category }}
+              </span>
+
+              <span>
+                {{ article.readingTime }}
+              </span>
+            </div>
+
+            <h3>
+              {{ article.title }}
+            </h3>
+
+            <p>
+              {{ article.excerpt }}
+            </p>
+
+            <a
+              routerLink="/blog"
+              class="article-card__link"
+            >
+              Leer artículo
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </div>
+
+        </article>
+
+      }
+
+    </div>
+
+  </div>
+</section>

@@ -6,6 +6,7 @@ import { Specialties } from '../../components/specialties/specialties';
 import { AboutPreview } from '../../components/about-preview/about-preview';
 import { TherapeuticApproach } from '../../components/therapeutic-approach/therapeutic-approach';
 import { FinalCta } from '../../components/final-cta/final-cta';
+import { BlogPreview } from '../../components/blog-preview/blog-preview';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,7 @@ import { FinalCta } from '../../components/final-cta/final-cta';
     Specialties,
     AboutPreview,
     TherapeuticApproach,
+    BlogPreview,
     FinalCta,
   ],
   templateUrl: './home.html',
