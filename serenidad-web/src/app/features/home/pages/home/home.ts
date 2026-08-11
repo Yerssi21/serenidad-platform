@@ -5,8 +5,9 @@ import { ServiceInfo } from '../../components/service-info/service-info';
 import { Specialties } from '../../components/specialties/specialties';
 import { AboutPreview } from '../../components/about-preview/about-preview';
 import { TherapeuticApproach } from '../../components/therapeutic-approach/therapeutic-approach';
-import { FinalCta } from '../../components/final-cta/final-cta';
 import { BlogPreview } from '../../components/blog-preview/blog-preview';
+import { FinalCta } from '../../components/final-cta/final-cta';
+
 
 @Component({
   selector: 'app-home',

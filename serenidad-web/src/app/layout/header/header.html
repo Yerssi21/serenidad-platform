@@ -6,6 +6,7 @@
       class="brand"
       routerLink="/"
       aria-label="Serenidad - Inicio"
+      (click)="closeMenu()"
     >
       <div class="brand__icon" aria-hidden="true">
         ❦
@@ -22,12 +23,11 @@
       </div>
     </a>
 
-    <!-- NAVEGACIÓN PRINCIPAL -->
+    <!-- NAVEGACIÓN DESKTOP -->
     <nav
       class="navigation"
       aria-label="Navegación principal"
     >
-
       <a
         routerLink="/"
         fragment="sobre-mi"
@@ -56,10 +56,9 @@
       <a routerLink="/contacto">
         Contacto
       </a>
-
     </nav>
 
-    <!-- BOTÓN PRINCIPAL -->
+    <!-- CTA DESKTOP -->
     <a
       class="header__cta"
       routerLink="/contacto"
@@ -67,5 +66,88 @@
       Agenda tu sesión
     </a>
 
+    <!-- BOTÓN HAMBURGUESA -->
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Abrir menú de navegación"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="mobile-navigation"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
   </div>
+
+  <!-- NAVEGACIÓN MÓVIL -->
+  @if (menuOpen()) {
+
+    <div
+      class="mobile-menu"
+      id="mobile-navigation"
+    >
+      <nav
+        class="mobile-navigation container"
+        aria-label="Navegación móvil"
+      >
+
+        <a
+          routerLink="/"
+          fragment="sobre-mi"
+          (click)="closeMenu()"
+        >
+          <span>01</span>
+          Sobre mí
+        </a>
+
+        <a
+          routerLink="/"
+          fragment="especialidades"
+          (click)="closeMenu()"
+        >
+          <span>02</span>
+          Especialidades
+        </a>
+
+        <a
+          routerLink="/"
+          fragment="enfoque"
+          (click)="closeMenu()"
+        >
+          <span>03</span>
+          Mi enfoque
+        </a>
+
+        <a
+          routerLink="/blog"
+          (click)="closeMenu()"
+        >
+          <span>04</span>
+          Blog
+        </a>
+
+        <a
+          routerLink="/contacto"
+          (click)="closeMenu()"
+        >
+          <span>05</span>
+          Contacto
+        </a>
+
+        <a
+          class="mobile-navigation__cta"
+          routerLink="/contacto"
+          (click)="closeMenu()"
+        >
+          Agenda tu sesión
+          <span aria-hidden="true">→</span>
+        </a>
+
+      </nav>
+    </div>
+
+  }
 </header>
