@@ -152,16 +152,21 @@
 
 @media (max-width: 640px) {
   .final-cta {
-    padding-bottom: 75px;
+    padding: 30px 0 65px;
 
     &__content {
-      padding: 55px 28px;
+      padding: 45px 24px;
 
       border-radius: 20px;
     }
 
     h2 {
-      font-size: 48px;
+      font-size: 42px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.75;
     }
 
     &__actions {
@@ -173,6 +178,9 @@
     }
 
     &__decorative {
+      padding-top: 20px;
+
+      font-size: 9px;
       text-align: center;
     }
   }

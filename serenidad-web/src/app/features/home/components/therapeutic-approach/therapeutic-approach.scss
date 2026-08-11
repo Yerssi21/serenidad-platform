@@ -159,22 +159,46 @@
 
 @media (max-width: 640px) {
   .approach {
-    padding: 75px 0;
+    padding: 68px 0;
+
+    &__intro {
+      gap: 28px;
+      margin-bottom: 48px;
+    }
 
     &__grid {
       grid-template-columns: 1fr;
     }
 
     h2 {
-      font-size: 48px;
+      font-size: 42px;
+    }
+
+    &__description {
+      p {
+        font-size: 14px;
+        line-height: 1.75;
+      }
     }
   }
 
   .approach-card {
     min-height: auto;
 
-    padding: 35px 22px;
+    padding: 30px 18px;
 
     border-right: 0 !important;
+
+    &__line {
+      margin: 18px 0 22px;
+    }
+
+    h3 {
+      font-size: 26px;
+    }
+
+    p {
+      line-height: 1.7;
+    }
   }
 }

@@ -87,16 +87,45 @@
 }
 
 @media (max-width: 600px) {
+  .service-info {
+    padding: 20px 0;
+  }
+
   .service-info__grid {
     grid-template-columns: 1fr;
   }
 
   .info-item {
+    min-height: auto;
+
+    padding: 20px 4px;
+
     border-right: 0;
     border-bottom: 1px solid var(--color-border);
 
+    &:first-child {
+      padding-left: 4px;
+    }
+
     &:last-child {
       border-bottom: 0;
+    }
+
+    &__icon {
+      flex-basis: 38px;
+
+      svg {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 12px;
     }
   }
 }

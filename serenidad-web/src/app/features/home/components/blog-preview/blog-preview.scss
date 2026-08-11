@@ -224,20 +224,35 @@
 
 @media (max-width: 640px) {
   .blog-preview {
-    padding: 75px 0;
+    padding: 68px 0;
+
+    &__header {
+      gap: 25px;
+      margin-bottom: 42px;
+    }
 
     &__grid {
       grid-template-columns: 1fr;
+      gap: 16px;
     }
 
     h2 {
-      font-size: 48px;
+      font-size: 42px;
     }
   }
 
   .article-card {
     &__content {
       min-height: auto;
+      padding: 26px 22px;
+    }
+
+    h3 {
+      font-size: 25px;
+    }
+
+    p {
+      line-height: 1.7;
     }
   }
 }

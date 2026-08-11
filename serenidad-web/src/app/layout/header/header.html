@@ -1,70 +1,33 @@
 <header class="header">
   <div class="header__container container">
-
     <!-- LOGO -->
-    <a
-      class="brand"
-      routerLink="/"
-      aria-label="Serenidad - Inicio"
-      (click)="closeMenu()"
-    >
-      <div class="brand__icon" aria-hidden="true">
-        ❦
-      </div>
+    <a class="brand" routerLink="/" aria-label="Serenidad - Inicio" (click)="closeMenu()">
+      <div class="brand__icon" aria-hidden="true">❦</div>
 
       <div class="brand__content">
-        <span class="brand__name">
-          Serenidad
-        </span>
+        <span class="brand__name"> Serenidad </span>
 
-        <span class="brand__subtitle">
-          Psicología & bienestar emocional
-        </span>
+        <span class="brand__subtitle"> Psicología & bienestar emocional </span>
       </div>
     </a>
 
     <!-- NAVEGACIÓN DESKTOP -->
-    <nav
-      class="navigation"
-      aria-label="Navegación principal"
-    >
-      <a
-        routerLink="/"
-        fragment="sobre-mi"
-      >
+    <nav class="navigation" aria-label="Navegación principal">
+      <a routerLink="/sobre-mi" (click)="closeMenu()">
         Sobre mí
       </a>
 
-      <a
-        routerLink="/"
-        fragment="especialidades"
-      >
-        Especialidades
-      </a>
+      <a routerLink="/" fragment="especialidades"> Especialidades </a>
 
-      <a
-        routerLink="/"
-        fragment="enfoque"
-      >
-        Mi enfoque
-      </a>
+      <a routerLink="/" fragment="enfoque"> Mi enfoque </a>
 
-      <a routerLink="/blog">
-        Blog
-      </a>
+      <a routerLink="/blog"> Blog </a>
 
-      <a routerLink="/contacto">
-        Contacto
-      </a>
+      <a routerLink="/contacto"> Contacto </a>
     </nav>
 
     <!-- CTA DESKTOP -->
-    <a
-      class="header__cta"
-      routerLink="/contacto"
-    >
-      Agenda tu sesión
-    </a>
+    <a class="header__cta" routerLink="/contacto"> Agenda tu sesión </a>
 
     <!-- BOTÓN HAMBURGUESA -->
     <button
@@ -79,75 +42,42 @@
       <span></span>
       <span></span>
     </button>
-
   </div>
 
   <!-- NAVEGACIÓN MÓVIL -->
   @if (menuOpen()) {
-
-    <div
-      class="mobile-menu"
-      id="mobile-navigation"
-    >
-      <nav
-        class="mobile-navigation container"
-        aria-label="Navegación móvil"
-      >
-
-        <a
-          routerLink="/"
-          fragment="sobre-mi"
-          (click)="closeMenu()"
-        >
+    <div class="mobile-menu" id="mobile-navigation">
+      <nav class="mobile-navigation container" aria-label="Navegación móvil">
+        <a routerLink="/" fragment="sobre-mi" (click)="closeMenu()">
           <span>01</span>
           Sobre mí
         </a>
 
-        <a
-          routerLink="/"
-          fragment="especialidades"
-          (click)="closeMenu()"
-        >
+        <a routerLink="/" fragment="especialidades" (click)="closeMenu()">
           <span>02</span>
           Especialidades
         </a>
 
-        <a
-          routerLink="/"
-          fragment="enfoque"
-          (click)="closeMenu()"
-        >
+        <a routerLink="/" fragment="enfoque" (click)="closeMenu()">
           <span>03</span>
           Mi enfoque
         </a>
 
-        <a
-          routerLink="/blog"
-          (click)="closeMenu()"
-        >
+        <a routerLink="/blog" (click)="closeMenu()">
           <span>04</span>
           Blog
         </a>
 
-        <a
-          routerLink="/contacto"
-          (click)="closeMenu()"
-        >
+        <a routerLink="/contacto" (click)="closeMenu()">
           <span>05</span>
           Contacto
         </a>
 
-        <a
-          class="mobile-navigation__cta"
-          routerLink="/contacto"
-          (click)="closeMenu()"
-        >
+        <a class="mobile-navigation__cta" routerLink="/contacto" (click)="closeMenu()">
           Agenda tu sesión
           <span aria-hidden="true">→</span>
         </a>
-
       </nav>
     </div>
-
   }
 </header>

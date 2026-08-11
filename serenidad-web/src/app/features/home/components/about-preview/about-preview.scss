@@ -226,7 +226,7 @@
 
 @media (max-width: 600px) {
   .about {
-    padding-bottom: 72px;
+    padding: 25px 0 65px;
 
     &__grid {
       border-radius: 20px;
@@ -234,19 +234,33 @@
 
     &__image,
     &__image-placeholder {
-      min-height: 370px;
+      min-height: 330px;
     }
 
     &__content {
-      padding: 44px 27px;
+      padding: 38px 24px;
     }
 
     h2 {
-      font-size: 46px;
+      font-size: 42px;
+    }
+
+    &__lead {
+      font-size: 16px !important;
+    }
+
+    p {
+      line-height: 1.75;
     }
 
     &__quote {
-      margin-top: 38px;
+      margin-top: 34px;
+      padding-inline: 8px;
+    }
+
+    blockquote {
+      font-size: 28px;
+      line-height: 1.25;
     }
   }
 }

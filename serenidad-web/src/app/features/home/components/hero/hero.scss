@@ -157,21 +157,36 @@ h1 {
     padding-top: 4px;
 
     &__visual {
-      min-height: 650px;
+      min-height: 610px;
       align-items: flex-end;
       border-radius: 20px;
     }
 
     &__content {
-      padding: 42px 26px;
+      padding: 38px 24px;
     }
 
     h1 {
-      font-size: clamp(50px, 14vw, 70px);
+      font-size: clamp(46px, 13vw, 62px);
+      line-height: 0.94;
 
       span {
         white-space: normal;
       }
     }
+
+    p {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    &__actions {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  .button {
+    width: 100%;
   }
 }

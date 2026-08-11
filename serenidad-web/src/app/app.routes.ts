@@ -16,6 +16,16 @@ export const routes: Routes = [
             (m) => m.Home,
           ),
       },
+
+      {
+        path: 'sobre-mi',
+        title: 'Sobre mí | Serenidad',
+        loadComponent: () =>
+          import('./features/about/pages/about/about').then(
+            (m) => m.About,
+          ),
+      },
+
       {
         path: 'blog',
         title: 'Blog | Serenidad',
@@ -24,6 +34,7 @@ export const routes: Routes = [
             (m) => m.BlogList,
           ),
       },
+
       {
         path: 'contacto',
         title: 'Contacto | Serenidad',
@@ -34,6 +45,7 @@ export const routes: Routes = [
       },
     ],
   },
+
   {
     path: '**',
     redirectTo: '',

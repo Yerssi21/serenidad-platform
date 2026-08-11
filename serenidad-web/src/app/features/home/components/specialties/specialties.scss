@@ -167,14 +167,41 @@
 
 @media (max-width: 640px) {
   .specialties {
-    padding: 52px 0 72px;
+    padding: 50px 0 68px;
 
     &__grid {
       grid-template-columns: 1fr;
+      gap: 14px;
+    }
+  }
+
+  .section-heading {
+    margin-bottom: 38px;
+
+    h2 {
+      font-size: 42px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.7;
     }
   }
 
   .specialty-card {
     min-height: auto;
+
+    padding: 30px 26px;
+
+    &__icon {
+      width: 54px;
+      height: 54px;
+
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 26px;
+    }
   }
 }

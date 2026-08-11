@@ -133,17 +133,50 @@
 
 @media (max-width: 600px) {
   .footer {
-    padding-top: 60px;
+    padding-top: 55px;
+
+    &__main {
+      gap: 45px;
+      padding-bottom: 50px;
+    }
+
+    &__brand {
+      > p {
+        margin-block: 20px;
+      }
+    }
 
     &__navigation {
       grid-template-columns: repeat(2, 1fr);
 
-      gap: 40px 25px;
+      gap: 35px 22px;
     }
 
     &__bottom {
       flex-direction: column;
       align-items: flex-start;
+
+      gap: 10px;
+    }
+  }
+
+  .footer-column {
+    &:last-child {
+      grid-column: 1 / -1;
+    }
+
+    a {
+      font-size: 16px;
+    }
+  }
+
+  .footer-brand {
+    &__name {
+      font-size: 34px;
+    }
+
+    &__symbol {
+      font-size: 36px;
     }
   }
 }
