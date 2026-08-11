@@ -1,1 +1,242 @@
-<p>contact works!</p>
+<section class="contact">
+
+  <div class="container">
+
+    <header class="contact__heading">
+      <span class="contact__eyebrow">
+        Contacto
+      </span>
+
+      <h1>
+        Tu proceso puede
+        <em>comenzar hoy.</em>
+      </h1>
+
+      <p>
+        Si estás pensando en iniciar terapia o quieres conocer cómo puedo
+        acompañarte, puedes escribirme a través de este formulario.
+      </p>
+    </header>
+
+    <div class="contact__layout">
+
+      <aside class="contact-info">
+
+        <span class="contact-info__label">
+          Psicología & bienestar emocional
+        </span>
+
+        <h2>
+          Un primer paso,
+          <em>sin juicios.</em>
+        </h2>
+
+        <p>
+          Puedes solicitar información sobre terapia individual,
+          de pareja, grupal o modalidad online.
+        </p>
+
+        <div class="contact-info__items">
+
+          <div class="contact-info__item">
+            <span>Modalidad</span>
+            <strong>Presencial · Online</strong>
+          </div>
+
+          <div class="contact-info__item">
+            <span>Ubicación</span>
+            <strong>Alicante</strong>
+          </div>
+
+          <div class="contact-info__item">
+            <span>Duración</span>
+            <strong>50 minutos</strong>
+          </div>
+
+        </div>
+
+        <p class="contact-info__notice">
+          Este formulario es únicamente para solicitar información o una
+          primera cita. No envíes información clínica sensible.
+        </p>
+
+      </aside>
+
+      <div class="contact-form-wrapper">
+
+        <form
+          class="contact-form"
+          [formGroup]="contactForm"
+          (ngSubmit)="submit()"
+          novalidate
+        >
+
+          <div class="form-field">
+            <label for="name">
+              Nombre *
+            </label>
+
+            <input
+              id="name"
+              type="text"
+              formControlName="name"
+              autocomplete="name"
+              placeholder="Tu nombre"
+            />
+
+            @if (
+              contactForm.controls.name.touched &&
+              contactForm.controls.name.invalid
+            ) {
+              <span class="form-field__error">
+                Introduce un nombre válido.
+              </span>
+            }
+          </div>
+
+          <div class="contact-form__row">
+
+            <div class="form-field">
+              <label for="email">
+                Email *
+              </label>
+
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                autocomplete="email"
+                placeholder="nombre@email.com"
+              />
+
+              @if (
+                contactForm.controls.email.touched &&
+                contactForm.controls.email.invalid
+              ) {
+                <span class="form-field__error">
+                  Introduce un email válido.
+                </span>
+              }
+            </div>
+
+            <div class="form-field">
+              <label for="phone">
+                Teléfono
+              </label>
+
+              <input
+                id="phone"
+                type="tel"
+                formControlName="phone"
+                autocomplete="tel"
+                placeholder="+34 ..."
+              />
+            </div>
+
+          </div>
+
+          <div class="form-field">
+            <label for="modality">
+              Modalidad que te interesa *
+            </label>
+
+            <select
+              id="modality"
+              formControlName="modality"
+            >
+              <option value="">
+                Selecciona una opción
+              </option>
+
+              <option value="presencial">
+                Presencial
+              </option>
+
+              <option value="online">
+                Online
+              </option>
+
+              <option value="pareja">
+                Terapia de pareja
+              </option>
+
+              <option value="grupal">
+                Terapia grupal
+              </option>
+            </select>
+
+            @if (
+              contactForm.controls.modality.touched &&
+              contactForm.controls.modality.invalid
+            ) {
+              <span class="form-field__error">
+                Selecciona una modalidad.
+              </span>
+            }
+          </div>
+
+          <div class="form-field">
+            <label for="message">
+              ¿En qué puedo ayudarte?
+            </label>
+
+            <textarea
+              id="message"
+              formControlName="message"
+              rows="5"
+              maxlength="500"
+              placeholder="Puedes escribir un mensaje breve..."
+            ></textarea>
+
+            <span class="form-field__hint">
+              Máximo 500 caracteres. Evita incluir información clínica sensible.
+            </span>
+          </div>
+
+          <label class="privacy-field">
+            <input
+              type="checkbox"
+              formControlName="privacyAccepted"
+            />
+
+            <span>
+              He leído y acepto la política de privacidad.
+            </span>
+          </label>
+
+          @if (
+            contactForm.controls.privacyAccepted.touched &&
+            contactForm.controls.privacyAccepted.invalid
+          ) {
+            <span class="form-field__error">
+              Debes aceptar la política de privacidad.
+            </span>
+          }
+
+          <button
+            class="contact-form__submit"
+            type="submit"
+          >
+            Solicitar información
+            <span aria-hidden="true">→</span>
+          </button>
+
+          @if (submitted()) {
+            <div
+              class="contact-form__success"
+              role="status"
+            >
+              Formulario validado correctamente. Cuando conectemos Spring Boot,
+              esta solicitud se enviará al backend.
+            </div>
+          }
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
