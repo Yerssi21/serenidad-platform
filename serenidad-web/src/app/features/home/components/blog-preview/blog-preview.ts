@@ -7,6 +7,7 @@ interface BlogArticle {
   readonly excerpt: string;
   readonly slug: string;
   readonly readingTime: string;
+  readonly image: string;
 }
 
 @Component({
@@ -24,14 +25,16 @@ export class BlogPreview {
         'Algunas relaciones pueden hacernos sentir que necesitamos a la otra persona para estar bien. Reconocer estas señales es el primer paso para recuperar autonomía.',
       slug: 'dependencia-emocional-en-la-pareja',
       readingTime: '6 min',
+      image: '/images/serenidad/blog/dependencia-emocional.jpeg',
     },
     {
       category: 'Ansiedad',
-      title: 'Cuando pensar demasiado empieza a agotarte',
+      title: 'Cuando pensar demasiado empieza a agotarte', 
       excerpt:
         'La preocupación constante puede convertirse en un ciclo difícil de detener. Comprender qué ocurre puede ayudarte a relacionarte de otra manera con tus pensamientos.',
       slug: 'cuando-pensar-demasiado-agota',
       readingTime: '5 min',
+      image: '/images/serenidad/blog/ansiedad.jpeg',
     },
     {
       category: 'Autoestima',
@@ -40,6 +43,7 @@ export class BlogPreview {
         'La forma en la que te hablas influye en cómo te relacionas contigo y con los demás. La autoestima también se construye desde el diálogo interno.',
       slug: 'aprender-a-hablarte-con-respeto',
       readingTime: '4 min',
+      image: '/images/serenidad/blog/autoestima.jpeg',
     },
   ];
 }
