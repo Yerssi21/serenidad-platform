@@ -1,0 +1,18 @@
+CREATE TABLE articles (
+    id BIGSERIAL PRIMARY KEY,
+
+    title VARCHAR(200) NOT NULL,
+    slug VARCHAR(220) NOT NULL UNIQUE,
+
+    category VARCHAR(100) NOT NULL,
+    excerpt VARCHAR(500) NOT NULL,
+    content TEXT NOT NULL,
+
+    image VARCHAR(300),
+    reading_time VARCHAR(20),
+
+    published BOOLEAN NOT NULL DEFAULT TRUE,
+
+    created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP WITH TIME ZONE
+);

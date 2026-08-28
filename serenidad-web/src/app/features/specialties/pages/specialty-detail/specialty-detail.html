@@ -1,0 +1,142 @@
+<section class="specialty-detail">
+
+  <div class="container">
+
+    @if (specialty() === undefined) {
+
+      <div class="specialty-detail__state">
+        <span class="specialty-detail__loader"></span>
+
+        <p>
+          Cargando información...
+        </p>
+      </div>
+
+    } @else if (specialty() === null) {
+
+      <div class="specialty-detail__state">
+
+        <span class="specialty-detail__eyebrow">
+          Serenidad
+        </span>
+
+        <h1>
+          Esta especialidad no está disponible.
+        </h1>
+
+        <p>
+          {{ errorMessage() }}
+        </p>
+
+        <a
+          routerLink="/"
+          fragment="especialidades"
+          class="specialty-detail__back-link"
+        >
+          Ver especialidades →
+        </a>
+
+      </div>
+
+    } @else {
+
+      @if (specialty(); as specialty) {
+
+        <a
+          routerLink="/"
+          fragment="especialidades"
+          class="specialty-detail__back"
+        >
+          ← Volver a especialidades
+        </a>
+
+        <header class="specialty-detail__hero">
+
+          <span class="specialty-detail__eyebrow">
+            Especialidad
+          </span>
+
+          <h1>
+            {{ specialty.title }}
+          </h1>
+
+          <p>
+            {{ specialty.summary }}
+          </p>
+
+        </header>
+
+
+        <div class="specialty-detail__content">
+
+          @for (
+            section of sections();
+            track section.displayOrder
+          ) {
+
+            <section class="specialty-section">
+
+              @if (section.title) {
+
+                <span class="specialty-section__number">
+                  0{{ section.displayOrder }}
+                </span>
+
+                <h2>
+                  {{ section.title }}
+                </h2>
+
+              }
+
+              <div class="specialty-section__text">
+
+                @for (
+                  paragraph of section.paragraphs;
+                  track $index
+                ) {
+
+                  <p>
+                    {{ paragraph }}
+                  </p>
+
+                }
+
+              </div>
+
+            </section>
+
+          }
+
+        </div>
+
+
+        <aside class="specialty-detail__cta">
+
+          <span>
+            Un proceso adaptado a ti
+          </span>
+
+          <h2>
+            ¿Quieres comenzar
+            <em>tu proceso?</em>
+          </h2>
+
+          <p>
+            Puedes contactar para resolver tus dudas
+            y valorar qué tipo de acompañamiento
+            se adapta mejor a ti.
+          </p>
+
+          <a routerLink="/contacto">
+            Agenda tu sesión →
+          </a>
+
+        </aside>
+
+      }
+
+    }
+
+  </div>
+
+</section>

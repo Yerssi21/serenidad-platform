@@ -1,0 +1,49 @@
+<section class="location">
+
+  <div class="location__content">
+
+    <span class="location__eyebrow">
+      Encuéntrame
+    </span>
+
+    <h2>
+      Un espacio para
+      <em>sentirte acompañada.</em>
+    </h2>
+
+    <p>
+      Si eliges atención presencial,
+      aquí puedes consultar la ubicación
+      y planificar tu llegada.
+    </p>
+
+    <a
+      class="location__directions"
+      [href]="directionsUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Cómo llegar
+      <span aria-hidden="true">→</span>
+    </a>
+
+  </div>
+
+  <div class="location__map-wrapper">
+
+    @if (mapUrl()) {
+
+      <iframe
+        class="location__map"
+        [src]="mapUrl()"
+        title="Ubicación de Serenidad"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+
+    }
+
+  </div>
+
+</section>

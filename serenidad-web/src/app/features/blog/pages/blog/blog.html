@@ -1,0 +1,88 @@
+<section class="blog">
+
+  <div class="container">
+
+    <header class="blog__header">
+
+      <span class="blog__eyebrow">
+        Recursos para ti
+      </span>
+
+      <h1>
+        Reflexiones para
+        <em>comprenderte mejor.</em>
+      </h1>
+
+      <p>
+        Un espacio con reflexiones y herramientas sobre
+        bienestar emocional, relaciones, autoestima
+        y crecimiento personal.
+      </p>
+
+    </header>
+
+    <div class="blog__grid">
+
+      @for (article of articles(); track article.slug) {
+
+        <article class="blog-card">
+
+          <a
+            class="blog-card__image"
+            [routerLink]="['/blog', article.slug]"
+          >
+            @if (article.image) {
+              <img
+                [src]="article.image"
+                [alt]="article.title"
+              />
+            }
+          </a>
+
+          <div class="blog-card__content">
+
+            <div class="blog-card__meta">
+
+              <span>
+                {{ article.category }}
+              </span>
+
+              <span>
+                {{ article.readingTime }}
+              </span>
+
+            </div>
+
+            <h2>
+              {{ article.title }}
+            </h2>
+
+            <p>
+              {{ article.excerpt }}
+            </p>
+
+            <a
+              class="blog-card__link"
+              [routerLink]="['/blog', article.slug]"
+            >
+              Leer artículo
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </div>
+
+        </article>
+
+      } @empty {
+
+        <p class="blog__empty">
+          No hay artículos disponibles en este momento.
+        </p>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>

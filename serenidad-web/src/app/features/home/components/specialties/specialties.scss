@@ -1,5 +1,14 @@
 .specialties {
   padding: 72px 0 96px;
+
+  &__grid {
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+  }
 }
 
 .section-heading {
@@ -59,16 +68,6 @@
     .flower {
       font-size: 16px;
     }
-  }
-}
-
-.specialties {
-  &__grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 20px;
   }
 }
 
@@ -142,6 +141,8 @@
 
     gap: 8px;
 
+    width: fit-content;
+
     margin-top: auto;
 
     color: var(--color-primary);
@@ -159,18 +160,83 @@
   }
 }
 
-@media (max-width: 1024px) {
-  .specialties__grid {
-    grid-template-columns: repeat(2, 1fr);
+
+/*
+ * ========================================
+ * DESKTOP
+ * 3 tarjetas arriba + 2 centradas abajo
+ * ========================================
+ */
+
+@media (min-width: 1001px) {
+
+  .specialties {
+    &__grid {
+      grid-template-columns:
+        repeat(6, minmax(0, 1fr));
+    }
+  }
+
+  .specialty-card {
+    grid-column: span 2;
+
+    &:nth-child(4) {
+      grid-column: 2 / span 2;
+    }
+
+    &:nth-child(5) {
+      grid-column: 4 / span 2;
+    }
   }
 }
 
+
+/*
+ * ========================================
+ * TABLET
+ * 2 columnas + última tarjeta centrada
+ * ========================================
+ */
+
+@media (min-width: 641px) and (max-width: 1000px) {
+
+  .specialties {
+    &__grid {
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 18px;
+    }
+  }
+
+  .specialty-card {
+    min-height: 320px;
+
+    &:last-child {
+      grid-column: 1 / -1;
+
+      width: calc(50% - 9px);
+
+      justify-self: center;
+    }
+  }
+}
+
+
+/*
+ * ========================================
+ * MÓVIL
+ * ========================================
+ */
+
 @media (max-width: 640px) {
+
   .specialties {
     padding: 50px 0 68px;
 
     &__grid {
       grid-template-columns: 1fr;
+
       gap: 14px;
     }
   }
@@ -189,6 +255,7 @@
   }
 
   .specialty-card {
+    width: 100%;
     min-height: auto;
 
     padding: 30px 26px;

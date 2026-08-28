@@ -1,0 +1,122 @@
+<section class="article-detail">
+  <div class="container">
+
+    @if (article() === undefined) {
+
+      <div class="article-detail__state">
+        <span class="article-detail__loader"></span>
+
+        <p>
+          Cargando artículo...
+        </p>
+      </div>
+
+    } @else if (article() === null) {
+
+      <div class="article-detail__state">
+
+        <span class="article-detail__eyebrow">
+          Serenidad
+        </span>
+
+        <h1>
+          Este artículo no está disponible.
+        </h1>
+
+        <p>
+          {{ errorMessage() }}
+        </p>
+
+        <a
+          routerLink="/blog"
+          class="article-detail__state-link"
+        >
+          Volver al blog
+          <span aria-hidden="true">→</span>
+        </a>
+
+      </div>
+
+    } @else {
+
+      @if (article(); as article) {
+
+        <a
+          routerLink="/blog"
+          class="article-detail__back"
+        >
+          ← Volver al blog
+        </a>
+
+        <header class="article-detail__header">
+
+          <div class="article-detail__meta">
+
+            <span>
+              {{ article.category }}
+            </span>
+
+            <span>
+              {{ article.readingTime }}
+            </span>
+
+          </div>
+
+          <h1>
+            {{ article.title }}
+          </h1>
+
+          <p class="article-detail__excerpt">
+            {{ article.excerpt }}
+          </p>
+
+        </header>
+
+        @if (article.image) {
+
+          <div class="article-detail__image">
+
+            <img
+              [src]="article.image"
+              [alt]="article.title"
+            />
+
+          </div>
+
+        }
+
+        <div class="article-detail__body">
+
+          @for (
+            paragraph of paragraphs();
+            track $index
+          ) {
+
+            <p>
+              {{ paragraph }}
+            </p>
+
+          }
+
+        </div>
+
+        <footer class="article-detail__footer">
+
+          <span>
+            Un espacio para comprenderte
+            con más calma.
+          </span>
+
+          <a routerLink="/contacto">
+            Comenzar mi proceso
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </footer>
+
+      }
+
+    }
+
+  </div>
+</section>

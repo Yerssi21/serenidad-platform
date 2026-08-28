@@ -1,11 +1,7 @@
 <section class="contact">
-
   <div class="container">
-
     <header class="contact__heading">
-      <span class="contact__eyebrow">
-        Contacto
-      </span>
+      <span class="contact__eyebrow"> Contacto </span>
 
       <h1>
         Tu proceso puede
@@ -13,18 +9,14 @@
       </h1>
 
       <p>
-        Si estás pensando en iniciar terapia o quieres conocer cómo puedo
-        acompañarte, puedes escribirme a través de este formulario.
+        Si estás pensando en iniciar terapia o quieres conocer cómo puedo acompañarte, puedes
+        escribirme a través de este formulario.
       </p>
     </header>
 
     <div class="contact__layout">
-
       <aside class="contact-info">
-
-        <span class="contact-info__label">
-          Psicología & bienestar emocional
-        </span>
+        <span class="contact-info__label"> Psicología & bienestar emocional </span>
 
         <h2>
           Un primer paso,
@@ -32,12 +24,11 @@
         </h2>
 
         <p>
-          Puedes solicitar información sobre terapia individual,
-          de pareja, grupal o modalidad online.
+          Puedes solicitar información sobre terapia individual, de pareja, grupal o modalidad
+          online.
         </p>
 
         <div class="contact-info__items">
-
           <div class="contact-info__item">
             <span>Modalidad</span>
             <strong>Presencial · Online</strong>
@@ -52,133 +43,103 @@
             <span>Duración</span>
             <strong>50 minutos</strong>
           </div>
-
         </div>
 
         <p class="contact-info__notice">
-          Este formulario es únicamente para solicitar información o una
-          primera cita. No envíes información clínica sensible.
+          Este formulario es únicamente para solicitar información o una primera cita. No envíes
+          información clínica sensible.
         </p>
-
       </aside>
 
       <div class="contact-form-wrapper">
-
-        <form
-          class="contact-form"
-          [formGroup]="contactForm"
-          (ngSubmit)="submit()"
-          novalidate
-        >
-
+        <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="submit()" novalidate>
           <div class="form-field">
-            <label for="name">
-              Nombre *
-            </label>
+            <label for="name"> Nombre * </label>
 
             <input
               id="name"
               type="text"
               formControlName="name"
+              maxlength="120"
               autocomplete="name"
               placeholder="Tu nombre"
             />
 
-            @if (
-              contactForm.controls.name.touched &&
-              contactForm.controls.name.invalid
-            ) {
-              <span class="form-field__error">
-                Introduce un nombre válido.
-              </span>
+            @if (contactForm.controls.name.invalid && contactForm.controls.name.touched) {
+              <small class="contact-form__error">
+                @if (contactForm.controls.name.hasError('required')) {
+                  El nombre es obligatorio.
+                }
+
+                @if (contactForm.controls.name.hasError('minlength')) {
+                  Escribe al menos 2 caracteres.
+                }
+              </small>
             }
           </div>
 
           <div class="contact-form__row">
-
             <div class="form-field">
-              <label for="email">
-                Email *
-              </label>
+              <label for="email"> Email * </label>
 
               <input
                 id="email"
                 type="email"
                 formControlName="email"
+                maxlength="180"
                 autocomplete="email"
                 placeholder="nombre@email.com"
               />
 
-              @if (
-                contactForm.controls.email.touched &&
-                contactForm.controls.email.invalid
-              ) {
-                <span class="form-field__error">
-                  Introduce un email válido.
-                </span>
+              @if (contactForm.controls.email.invalid && contactForm.controls.email.touched) {
+                <small class="contact-form__error">
+                  @if (contactForm.controls.email.hasError('required')) {
+                    El email es obligatorio.
+                  }
+
+                  @if (contactForm.controls.email.hasError('email')) {
+                    Introduce un email válido.
+                  }
+                </small>
               }
             </div>
 
             <div class="form-field">
-              <label for="phone">
-                Teléfono
-              </label>
+              <label for="phone"> Teléfono </label>
 
               <input
                 id="phone"
                 type="tel"
                 formControlName="phone"
+                maxlength="30"
                 autocomplete="tel"
                 placeholder="+34 ..."
               />
             </div>
-
           </div>
 
           <div class="form-field">
-            <label for="modality">
-              Modalidad que te interesa *
-            </label>
+            <label for="modality"> Modalidad que te interesa * </label>
 
-            <select
-              id="modality"
-              formControlName="modality"
-            >
-              <option value="">
-                Selecciona una opción
-              </option>
+            <select id="modality" formControlName="modality">
+              <option value="">Selecciona una opción</option>
 
-              <option value="presencial">
-                Presencial
-              </option>
+              <option value="presencial">Presencial</option>
 
-              <option value="online">
-                Online
-              </option>
+              <option value="online">Online</option>
 
-              <option value="pareja">
-                Terapia de pareja
-              </option>
+              <option value="pareja">Terapia de pareja</option>
 
-              <option value="grupal">
-                Terapia grupal
-              </option>
+              <option value="grupal">Terapia grupal</option>
             </select>
 
-            @if (
-              contactForm.controls.modality.touched &&
-              contactForm.controls.modality.invalid
-            ) {
-              <span class="form-field__error">
-                Selecciona una modalidad.
-              </span>
+            @if (contactForm.controls.modality.touched && contactForm.controls.modality.invalid) {
+              <span class="contact-form__error"> Selecciona una modalidad. </span>
             }
           </div>
 
           <div class="form-field">
-            <label for="message">
-              ¿En qué puedo ayudarte?
-            </label>
+            <label for="message"> ¿En qué puedo ayudarte? </label>
 
             <textarea
               id="message"
@@ -194,49 +155,43 @@
           </div>
 
           <label class="privacy-field">
-            <input
-              type="checkbox"
-              formControlName="privacyAccepted"
-            />
+            <input type="checkbox" formControlName="privacyAccepted" />
 
-            <span>
-              He leído y acepto la política de privacidad.
-            </span>
+            <span> He leído y acepto la política de privacidad. </span>
           </label>
 
           @if (
-            contactForm.controls.privacyAccepted.touched &&
-            contactForm.controls.privacyAccepted.invalid
+            contactForm.controls.privacyAccepted.invalid &&
+            contactForm.controls.privacyAccepted.touched
           ) {
-            <span class="form-field__error">
-              Debes aceptar la política de privacidad.
-            </span>
+            <small class="contact-form__error"> Debes aceptar la política de privacidad. </small>
           }
 
-          <button
-            class="contact-form__submit"
-            type="submit"
-          >
-            Solicitar información
-            <span aria-hidden="true">→</span>
+          <button class="contact-form__submit" type="submit" [disabled]="loading()">
+            @if (loading()) {
+              Enviando...
+            } @else {
+              Solicitar información
+              <span aria-hidden="true">→</span>
+            }
           </button>
 
-          @if (submitted()) {
-            <div
-              class="contact-form__success"
-              role="status"
-            >
-              Formulario validado correctamente. Cuando conectemos Spring Boot,
-              esta solicitud se enviará al backend.
+          @if (successMessage()) {
+            <div class="contact-form__success" role="status">
+              {{ successMessage() }}
             </div>
           }
 
+          @if (errorMessage()) {
+            <div class="contact-form__error" role="alert">
+              {{ errorMessage() }}
+            </div>
+          }
         </form>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
+<div class="container">
+  <app-location-map />
+</div>
