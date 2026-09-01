@@ -17,6 +17,8 @@ import lombok.RequiredArgsConstructor;
 public class ContactService {
 
 	private final ContactRequestRepository repository;
+	
+	private final ContactEmailService contactEmailService;
 
 	@Transactional
 	public ContactResponseDto create(ContactRequestDto dto) {
@@ -38,6 +40,7 @@ public class ContactService {
 		contact.setCreatedAt(now);
 
 		ContactRequest saved = repository.save(contact);
+		contactEmailService.sendNewContactNotification(saved);
 
 		return new ContactResponseDto(saved.getId(), "Solicitud recibida correctamente", saved.getCreatedAt());
 	}

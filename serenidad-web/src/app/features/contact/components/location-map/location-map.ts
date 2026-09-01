@@ -30,7 +30,7 @@ export class LocationMap {
    * por la dirección definitiva.
    */
   private readonly address =
-    'Av. Maisonnave 28 bis, Alicante, España';
+    'Av. Maisonnave 28, Alicante, España';
 
   protected readonly mapUrl =
     computed<SafeResourceUrl>(() => {
